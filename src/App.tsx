@@ -1,16 +1,23 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import { NavBar } from "./components/layout/navbar/NavBar";
+import { Home } from "./components/pages/home/Home";
+import { MyWork } from "./components/pages/mywork/MyWork";
 
 export const App: React.FC = () => {
-
     return (
-        <div className="App">
-            <Container fluid>
+        <Container className="App" fluid>
+            <BrowserRouter>
                 <NavBar/>
-            </Container>
-        </div>
+
+                <Switch>
+                    <Route path="/" exact={true} component={Home}/>
+                    <Route path="/my-work" exact={false} component={MyWork}/>
+                </Switch>
+            </BrowserRouter>
+        </Container>
     );
 };
 

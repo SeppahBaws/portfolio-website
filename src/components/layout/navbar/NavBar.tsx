@@ -1,16 +1,66 @@
 import React from "react";
-import { Container, Dropdown, Menu, Segment } from "semantic-ui-react";
-import "./NavBar.css";
+import { useHistory, useLocation } from "react-router-dom";
+import { Container, Menu, Segment } from "semantic-ui-react";
+import "./NavBar.scss";
+
+class NavLink {
+    display!: string;
+    name!: string;
+    url!: string;
+}
 
 export const NavBar: React.FC = () => {
-    const [activeItem, setActiveItem] = React.useState("work");
+    const history = useHistory();
+    const location = useLocation();
 
-    const handleClick = (name: string | undefined) => {
-        if (!name) {
-            return;
+    const linksLeft: NavLink[] = [
+        {
+            display: "Home",
+            name: "home",
+            url: "",
+        },
+        {
+            display: "My Work",
+            name: "work",
+            url: "my-work",
+        },
+        {
+            display: "About Me",
+            name: "about",
+            url: "about-me",
         }
+    ];
 
-        setActiveItem(name);
+    const linksRight: NavLink[] = [
+        {
+            display: "CV",
+            name: "cv",
+            url: "cv",
+        },
+        {
+            display: "Contact Me",
+            name: "contact",
+            url: "contact-me",
+        }
+    ];
+
+    const renderLink = (link: NavLink) => {
+        return (
+            <Menu.Item
+                key={link.name}
+                name={link.name}
+                active={location.pathname === "/" + link.url}
+                onClick={() => handleLinkClick(link)}
+            >
+                {link.display}
+            </Menu.Item>
+        );
+    };
+
+    const handleLinkClick = (link: NavLink) => {
+        if (location.pathname !== link.url) {
+            history.push(link.url);
+        }
     };
 
     return (
@@ -19,36 +69,14 @@ export const NavBar: React.FC = () => {
                 <Container>
                     <Menu.Item header>Seppe Dekeyser</Menu.Item>
 
-                    <Menu.Item
-                        name={"work"}
-                        active={activeItem === "work"}
-                        onClick={(e, { name }) => handleClick(name)}
-                    >
-                        My Work
-                    </Menu.Item>
-                    <Menu.Item
-                        name={"about"}
-                        active={activeItem === "about"}
-                        onClick={(e, { name }) => handleClick(name)}
-                    >
-                        About Me
-                    </Menu.Item>
+                    {linksLeft.map((link) => {
+                        return renderLink(link);
+                    })}
 
                     <Menu.Menu position={"right"}>
-                        <Menu.Item
-                            name={"cv"}
-                            active={activeItem === "cv"}
-                            onClick={(e, { name }) => handleClick(name)}
-                        >
-                            CV
-                        </Menu.Item>
-                        <Menu.Item
-                            name={"contact"}
-                            active={activeItem === "contact"}
-                            onClick={(e, { name }) => handleClick(name)}
-                        >
-                            Contact Me
-                        </Menu.Item>
+                        {linksRight.map((link) => {
+                            return renderLink(link);
+                        })}
                     </Menu.Menu>
                 </Container>
             </Menu>
