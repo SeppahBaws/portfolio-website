@@ -26,16 +26,21 @@ export const WorkCard: React.FC<{
                     </p>
                 </Card.Description>
             </Card.Content>
-            <Card.Content extra>
-                {props.tags.map((tag) => {
-                    return (
-                        <Label
-                            key={`workcard-${props.id}-tag-${tag}`}
-                            content={tag}
-                        />
-                    );
-                })}
-            </Card.Content>
+            {props.tags.length > 0
+                ? (
+                    <Card.Content extra>
+                        {props.tags.map((tag) => {
+                            return (
+                                <Label
+                                    key={`workcard-${props.id}-tag-${tag}`}
+                                    content={tag}
+                                />
+                            );
+                        })}
+                    </Card.Content>
+                )
+                : <span/>
+            }
         </Card>
     );
 };
