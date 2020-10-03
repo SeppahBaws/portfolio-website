@@ -20,7 +20,7 @@ export const Home: React.FC = () => {
                         longDescription: p.longDesc,
                         previewImg: p.previewImg,
                         shortDescription: p.shortDesc,
-                        tags: [],
+                        tags: p.tags,
                         title: p.title,
                     });
                 }

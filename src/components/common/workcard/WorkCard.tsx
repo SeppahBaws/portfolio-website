@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Image, Label } from "semantic-ui-react";
 import "./WorkCard.scss";
+import { Tag } from "../../../classes/Tag";
 
 export const WorkCard: React.FC<{
     id: string,
     previewImg: string,
     title: string,
     description: string,
-    tags: string[],
+    tags: Tag[],
 }> = (props) => {
     return (
         <Card
@@ -32,8 +33,8 @@ export const WorkCard: React.FC<{
                         {props.tags.map((tag) => {
                             return (
                                 <Label
-                                    key={`workcard-${props.id}-tag-${tag}`}
-                                    content={tag}
+                                    key={`workcard-${props.id}-tag-${tag.id}`}
+                                    content={tag.display}
                                 />
                             );
                         })}
