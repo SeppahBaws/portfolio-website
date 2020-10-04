@@ -7,6 +7,7 @@ class NavLink {
     display!: string;
     name!: string;
     url!: string;
+    ext: boolean = false;
 }
 
 export const NavBar: React.FC = () => {
@@ -16,16 +17,19 @@ export const NavBar: React.FC = () => {
     const linksLeft: NavLink[] = [
         {
             display: "Home",
+            ext: false,
             name: "home",
             url: "",
         },
         {
             display: "My Work",
+            ext: false,
             name: "work",
             url: "my-work",
         },
         {
             display: "About Me",
+            ext: false,
             name: "about",
             url: "about-me",
         }
@@ -34,17 +38,30 @@ export const NavBar: React.FC = () => {
     const linksRight: NavLink[] = [
         {
             display: "CV",
+            ext: true,
             name: "cv",
-            url: "cv",
+            url: "https://cdn.seppedekeyser.be/SeppeDekeyserCV.pdf",
         },
         {
             display: "Contact Me",
+            ext: false,
             name: "contact",
             url: "contact-me",
         }
     ];
 
     const renderLink = (link: NavLink) => {
+        if (link.ext) {
+            return (
+                <Menu.Item
+                    href={link.url}
+                    target="_blank"
+                >
+                    {link.display}
+                </Menu.Item>
+            );
+        }
+
         return (
             <Menu.Item
                 key={link.name}

@@ -1,0 +1,21 @@
+$backdrop-height: 20em;
+
+.header-backdrop {
+    height: $backdrop-height;
+    background-size: cover;
+    background-position: center center;
+
+    // Semantic ui header element
+    .ui.header {
+        text-align: center;
+        height: 100%;
+        line-height: $backdrop-height / 4;
+        font-size: 4em;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+    }
+}
+
+.tags {
+    padding: 0.5em 0 1em 0;
+}

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { match } from "react-router-dom";
-import { Container, Header, Image, Loader } from "semantic-ui-react";
+import { Container, Header, Label, Loader } from "semantic-ui-react";
 import { Project } from "../../../classes/Project";
+import "./ProjectDetail.scss";
 
 export const ProjectDetail: React.FC<{
     match: match,
@@ -20,7 +21,7 @@ export const ProjectDetail: React.FC<{
                     longDescription: data.result.longDesc,
                     previewImg: data.result.previewImg,
                     shortDescription: data.result.shortDesc,
-                    tags: [],
+                    tags: data.result.tags,
                     title: data.result.title,
                 });
             });
@@ -32,11 +33,26 @@ export const ProjectDetail: React.FC<{
 
     return (
         <Container>
-            <Header as="h1">Project {project.title}</Header>
-            {/* <p>{project.shortDescription}</p>*/}
-            {/* <p>{project.longDescription}</p>*/}
-            <ReactMarkdown source={project.longDescription}/>
-            <Image src={"http://seppedekeyser.be/img-ext/Camping%20Manager%20Prototype.png"}/>
+            <div
+                className="header-backdrop"
+                style={{
+                    backgroundImage: `url(${project.previewImg})`
+                }}
+            >
+                <Header as="h1">{project.title}</Header>
+            </div>
+            <div className="tags">
+                {project.tags.map((t) => {
+                    return (
+                        <Label
+                            key={`tag-${t.id}`}
+                        >
+                            {t.display}
+                        </Label>
+                    );
+                })}
+            </div>
+            <ReactMarkdown source={project.longDescription} escapeHtml={false}/>
         </Container>
     );
 };
