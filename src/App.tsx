@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.scss";
+import "./theme.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
+import { Footer } from "./components/layout/footer/Footer";
 import { NavBar } from "./components/layout/navbar/NavBar";
 import { Home } from "./components/pages/home/Home";
-import { MyWork } from "./components/pages/mywork/MyWork";
 import { ProjectDetail } from "./components/pages/project/ProjectDetail";
 
 export const App: React.FC = () => {
@@ -16,8 +17,9 @@ export const App: React.FC = () => {
                 <Switch>
                     <Route path="/" exact={true} component={Home}/>
                     <Route path="/projects/:projectId" exact={false} component={ProjectDetail}/>
-                    <Route path="/my-work" exact={false} component={MyWork}/>
                 </Switch>
+
+                <Footer/>
             </BrowserRouter>
         </Container>
     );

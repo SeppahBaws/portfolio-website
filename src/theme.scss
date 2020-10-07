@@ -1,0 +1,45 @@
+$background-dark: #181a1b;
+$background: lighten($background-dark, 5%);
+$background-lighter: lighten($background-dark, 5%);
+$background-light: lighten($background, 10%);
+
+$text-light: #ffffff;
+$text: darken($text-light, 5%);
+
+$theme-color: #F02D3A;
+
+html, body {
+    background-color: lighten(#181a1b, 5%) !important;
+    color: darken(#FFFFFF, 5%) !important;
+    font-size: 16px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $text-light !important;
+}
+
+// ======[ Selected text ]====== //
+::selection {
+    background-color: $theme-color !important;
+    color: #000 !important;
+}
+
+// ======[ Label ]====== //
+.ui.label {
+    background-color: $background-light !important;
+    color: $text !important;
+}
+
+// ======[ Card ]====== //
+.ui.card {
+    background-color: $background-lighter !important;
+    box-shadow: 0 1px 3px 0 #3e3e3e, 0 0 0 1px #5b5b5b !important;
+    .content {
+        .header {
+            color: $text-light !important;
+        }
+        .description {
+            color: $text !important;
+        }
+    }
+}

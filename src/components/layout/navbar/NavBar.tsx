@@ -19,19 +19,13 @@ export const NavBar: React.FC = () => {
             display: "Home",
             ext: false,
             name: "home",
-            url: "",
-        },
-        {
-            display: "My Work",
-            ext: false,
-            name: "work",
-            url: "my-work",
+            url: "/",
         },
         {
             display: "About Me",
             ext: false,
             name: "about",
-            url: "about-me",
+            url: "/about-me",
         }
     ];
 
@@ -46,7 +40,7 @@ export const NavBar: React.FC = () => {
             display: "Contact Me",
             ext: false,
             name: "contact",
-            url: "contact-me",
+            url: "/contact-me",
         }
     ];
 
@@ -66,7 +60,7 @@ export const NavBar: React.FC = () => {
             <Menu.Item
                 key={link.name}
                 name={link.name}
-                active={location.pathname === "/" + link.url}
+                active={location.pathname === link.url}
                 onClick={() => handleLinkClick(link)}
             >
                 {link.display}

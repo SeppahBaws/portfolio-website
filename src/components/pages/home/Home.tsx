@@ -35,24 +35,22 @@ export const Home: React.FC = () => {
     return (
         <Container>
             <h2>My Projects</h2>
-            <Grid columns={3}>
-                <Grid.Row>
-                    {projects.map((proj) => {
-                        return (
-                            <Grid.Column
-                                key={`work-item-col-${proj.id}`}
-                            >
-                                <WorkCard
-                                    id={proj.id}
-                                    previewImg={proj.previewImg}
-                                    title={proj.title}
-                                    description={proj.shortDescription}
-                                    tags={proj.tags}
-                                />
-                            </Grid.Column>
-                        );
-                    })}
-                </Grid.Row>
+            <Grid columns={3} stackable>
+                {projects.map((proj) => {
+                    return (
+                        <Grid.Column
+                            key={`work-item-col-${proj.id}`}
+                        >
+                            <WorkCard
+                                id={proj.id}
+                                previewImg={proj.previewImg}
+                                title={proj.title}
+                                description={proj.shortDescription}
+                                tags={proj.tags}
+                            />
+                        </Grid.Column>
+                    );
+                })}
             </Grid>
         </Container>
     );

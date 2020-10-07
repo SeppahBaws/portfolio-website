@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { match } from "react-router-dom";
-import { Container, Header, Label, Loader } from "semantic-ui-react";
+import { Container, Header, Image, Label, Loader } from "semantic-ui-react";
 import { Project } from "../../../classes/Project";
 import "./ProjectDetail.scss";
+import { CodeBlock, atomOneDark } from "react-code-blocks";
 
 export const ProjectDetail: React.FC<{
     match: match,
@@ -31,6 +32,23 @@ export const ProjectDetail: React.FC<{
         return <Loader/>;
     }
 
+    const renderImage = (imgProps: any) => {
+        return <Image src={imgProps.src}/>;
+    };
+
+    const renderCode = (codeProps: any) => {
+        return (
+            <div style={{ fontFamily: "Jetbrains Mono" }}>
+                <CodeBlock
+                    language={codeProps.language}
+                    text={codeProps.value}
+                    showLineNumbers={true}
+                    theme={atomOneDark}
+                />
+            </div>
+        );
+    };
+
     return (
         <Container>
             <div
@@ -52,7 +70,12 @@ export const ProjectDetail: React.FC<{
                     );
                 })}
             </div>
-            <ReactMarkdown source={project.longDescription} escapeHtml={false}/>
+            <ReactMarkdown
+                source={project.longDescription}
+                escapeHtml={false}
+                // renderers={{ code: renderPre }}
+                renderers={{ code: renderCode, image: renderImage }}
+            />
         </Container>
     );
 };
