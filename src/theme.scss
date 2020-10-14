@@ -6,7 +6,7 @@ $background-light: lighten($background, 10%);
 $text-light: #ffffff;
 $text: darken($text-light, 5%);
 
-$theme-color: #F02D3A;
+$theme-color: #169EF3;
 
 html, body {
     background-color: lighten(#181a1b, 5%) !important;
@@ -14,20 +14,22 @@ html, body {
     font-size: 16px !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.ui.header {
     color: $text-light !important;
 }
 
 // ======[ Selected text ]====== //
 ::selection {
     background-color: $theme-color !important;
-    color: #000 !important;
+    color: $text-light !important;
 }
 
 // ======[ Label ]====== //
 .ui.label {
     background-color: $background-light !important;
     color: $text !important;
+    margin: .14285714em .14285714em !important;
 }
 
 // ======[ Card ]====== //

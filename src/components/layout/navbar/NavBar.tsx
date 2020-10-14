@@ -30,7 +30,7 @@ export const NavBar: React.FC = () => {
     ];
 
     const linksRight: NavLink[] = [
-        {
+        /* {
             display: "CV",
             ext: true,
             name: "cv",
@@ -41,7 +41,7 @@ export const NavBar: React.FC = () => {
             ext: false,
             name: "contact",
             url: "/contact-me",
-        }
+        } */
     ];
 
     const renderLink = (link: NavLink) => {
@@ -75,7 +75,7 @@ export const NavBar: React.FC = () => {
     };
 
     return (
-        <Segment inverted>
+        <Segment id="navbar" inverted>
             <Menu inverted secondary>
                 <Container>
                     <Menu.Item header>Seppe Dekeyser</Menu.Item>

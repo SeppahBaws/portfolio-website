@@ -1,4 +1,15 @@
-.root,
-.App {
+#root,
+.app {
     min-height: 100% !important;
+    height: 100% !important;
+}
+
+.app {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.app-content {
+    margin-top: 7em;
+    flex-grow: 1;
 }

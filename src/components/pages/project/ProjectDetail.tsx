@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { CodeBlock, atomOneDark } from "react-code-blocks";
 import ReactMarkdown from "react-markdown";
 import { match } from "react-router-dom";
 import { Container, Header, Image, Label, Loader } from "semantic-ui-react";
 import { Project } from "../../../classes/Project";
 import "./ProjectDetail.scss";
-import { CodeBlock, atomOneDark } from "react-code-blocks";
 
 export const ProjectDetail: React.FC<{
     match: match,
 }> = (props) => {
     const [project, setProject] = useState<Project>();
+
+    useEffect(() => {
+        document.title = "Seppe Dekeyser";
+    }, []);
 
     useEffect(() => {
         // @ts-ignore
@@ -27,6 +31,12 @@ export const ProjectDetail: React.FC<{
                 });
             });
     }, [props.match.params]);
+
+    useEffect(() => {
+        if (project) {
+            document.title = `Seppe Dekeyser - ${project.title}`;
+        }
+    }, [project]);
 
     if (!project) {
         return <Loader/>;
