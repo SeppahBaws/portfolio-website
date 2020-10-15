@@ -4,12 +4,14 @@ import { Project } from "../../../classes/Project";
 import { WorkCard } from "../../common/workcard/WorkCard";
 
 export const Home: React.FC = () => {
-    const [projects, setProjects] = useState<Project[]>();
+    const [mainProjects, setMainProjects] = useState<Project[]>();
+    const [sideProjects, setSideProjects] = useState<Project[]>();
 
     useEffect(() => {
         document.title = "Seppe Dekeyser - Home";
 
-        fetch("https://api.seppedekeyser.be/projects")
+        // Get the main projects
+        fetch("https://api.seppedekeyser.be/projects/main")
             .then(async(response) => response.json())
             .then(data => {
                 const projs: Project[] = [];
@@ -23,19 +25,37 @@ export const Home: React.FC = () => {
                         title: p.title,
                     });
                 }
-                setProjects(projs);
+                setMainProjects(projs);
+            });
+
+        // Get the side projects
+        fetch("https://api.seppedekeyser.be/projects/side")
+            .then(async(response) => response.json())
+            .then(data => {
+                const projs: Project[] = [];
+                for (const p of data.result) {
+                    projs.push({
+                        id: p.id,
+                        longDescription: p.longDesc,
+                        previewImg: p.previewImg,
+                        shortDescription: p.shortDesc,
+                        tags: p.tags,
+                        title: p.title,
+                    });
+                }
+                setSideProjects(projs);
             });
     }, []);
 
-    if (!projects) {
+    if (!mainProjects || !sideProjects) {
         return <Loader active/>;
     }
 
     return (
-        <Container>
-            <h2>My Projects</h2>
-            <Grid columns={3} stackable>
-                {projects.map((proj) => {
+        <Container className="home">
+            <h2>Main Projects</h2>
+            <div className="ui stackable three column grid">
+                {mainProjects.map((proj) => {
                     return (
                         <Grid.Column
                             key={`work-item-col-${proj.id}`}
@@ -50,7 +70,26 @@ export const Home: React.FC = () => {
                         </Grid.Column>
                     );
                 })}
-            </Grid>
+            </div>
+            <br/>
+            <h2>Side Projects</h2>
+            <div className="ui stackable three column grid">
+                {sideProjects.map((proj) => {
+                    return (
+                        <Grid.Column
+                            key={`work-item-col-${proj.id}`}
+                        >
+                            <WorkCard
+                                id={proj.id}
+                                previewImg={proj.previewImg}
+                                title={proj.title}
+                                description={proj.shortDescription}
+                                tags={proj.tags}
+                            />
+                        </Grid.Column>
+                    );
+                })}
+            </div>
         </Container>
     );
 };

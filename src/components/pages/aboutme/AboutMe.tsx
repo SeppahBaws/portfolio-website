@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Container, Header, Image } from "semantic-ui-react";
 import "./AboutMe.scss";
 
@@ -18,7 +19,7 @@ export const AboutMe: React.FC = () => {
             </div>
             <Header as="h3">Hi there!</Header>
             <p>
-                I am Seppe Dekeyser, currently a 3rd Game Development student at HOWEST Digital Arts and Entertainment, located in Belgium.</p>
+                I am Seppe Dekeyser, currently a 3rd Game Development student at <Link to="https://digitalartsandentertainment.be">HOWEST Digital Arts and Entertainment</Link>, located in Belgium.</p>
             <p>
                 My programming journey started around 2014, with some C# tutorials that I found on the internet.
                 Not long after that, the Brackeys YouTube channel popped up on my radar, which woke the game dev worm inside of me.

@@ -15,7 +15,9 @@ export const WorkCard: React.FC<{
         <Card
             key={`workcard-${props.id}`}
         >
-            <Image src={props.previewImg}/>
+            <Link to={`/projects/${props.id}`}>
+                <Image src={props.previewImg}/>
+            </Link>
             <Card.Content>
                 <Card.Header>{props.title}</Card.Header>
                 <Card.Description>
