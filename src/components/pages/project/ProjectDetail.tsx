@@ -19,7 +19,7 @@ export const ProjectDetail: React.FC<{
         // @ts-ignore
         const id = props.match.params.projectId;
         fetch(`https://api.seppedekeyser.be/project/${id}`)
-            .then(async (response) => response.json())
+            .then(async(response) => response.json())
             .then(data => {
                 setProject({
                     id: data.result.id,
@@ -39,7 +39,7 @@ export const ProjectDetail: React.FC<{
     }, [project]);
 
     if (!project) {
-        return <Loader />;
+        return <Loader active/>;
     }
 
     const renderImage = (imgProps: any) => {
