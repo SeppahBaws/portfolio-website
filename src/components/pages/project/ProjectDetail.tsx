@@ -19,7 +19,7 @@ export const ProjectDetail: React.FC<{
         // @ts-ignore
         const id = props.match.params.projectId;
         fetch(`https://api.seppedekeyser.be/project/${id}`)
-            .then(async(response) => response.json())
+            .then(async (response) => response.json())
             .then(data => {
                 setProject({
                     id: data.result.id,
@@ -39,11 +39,11 @@ export const ProjectDetail: React.FC<{
     }, [project]);
 
     if (!project) {
-        return <Loader/>;
+        return <Loader />;
     }
 
     const renderImage = (imgProps: any) => {
-        return <Image src={imgProps.src}/>;
+        return <Image src={imgProps.src} />;
     };
 
     const renderCode = (codeProps: any) => {
@@ -59,8 +59,15 @@ export const ProjectDetail: React.FC<{
         );
     };
 
+    const renderIframe = (iframe: any) => {
+        return (
+            <div className="iframe-wrapper" dangerouslySetInnerHTML={{ __html: iframe.value }}>
+            </div>
+        );
+    };
+
     return (
-        <Container>
+        <Container className="project-detail">
             <div
                 className="header-backdrop"
                 style={{
@@ -83,8 +90,7 @@ export const ProjectDetail: React.FC<{
             <ReactMarkdown
                 source={project.longDescription}
                 escapeHtml={false}
-                // renderers={{ code: renderPre }}
-                renderers={{ code: renderCode, image: renderImage }}
+                renderers={{ code: renderCode, image: renderImage, html: renderIframe }}
             />
         </Container>
     );

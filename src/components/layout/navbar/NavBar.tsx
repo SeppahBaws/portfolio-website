@@ -26,28 +26,20 @@ export const NavBar: React.FC = () => {
             ext: false,
             name: "about",
             url: "/about-me",
-        }
-    ];
-
-    const linksRight: NavLink[] = [
-        /* {
-            display: "CV",
-            ext: true,
-            name: "cv",
-            url: "https://cdn.seppedekeyser.be/SeppeDekeyserCV.pdf",
         },
         {
-            display: "Contact Me",
-            ext: false,
-            name: "contact",
-            url: "/contact-me",
-        } */
+            display: "Resume",
+            ext: true,
+            name: "resume",
+            url: "https://cdn.seppedekeyser.be/SeppeDekeyserResume.pdf",
+        }
     ];
 
     const renderLink = (link: NavLink) => {
         if (link.ext) {
             return (
                 <Menu.Item
+                    key={`navbar-link-${link.name}`}
                     href={link.url}
                     target="_blank"
                 >
@@ -83,12 +75,6 @@ export const NavBar: React.FC = () => {
                     {linksLeft.map((link) => {
                         return renderLink(link);
                     })}
-
-                    <Menu.Menu position={"right"}>
-                        {linksRight.map((link) => {
-                            return renderLink(link);
-                        })}
-                    </Menu.Menu>
                 </Container>
             </Menu>
         </Segment>

@@ -12,7 +12,6 @@ export const Home: React.FC = () => {
         fetch("https://api.seppedekeyser.be/projects")
             .then(async(response) => response.json())
             .then(data => {
-                console.log(data);
                 const projs: Project[] = [];
                 for (const p of data.result) {
                     projs.push({
