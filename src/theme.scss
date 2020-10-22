@@ -36,6 +36,7 @@ h1, h2, h3, h4, h5, h6,
 .ui.card {
     background-color: $background-lighter !important;
     box-shadow: 0 1px 3px 0 #3e3e3e, 0 0 0 1px #5b5b5b !important;
+    overflow: hidden !important;
     .content {
         .header {
             color: $text-light !important;
@@ -43,6 +44,9 @@ h1, h2, h3, h4, h5, h6,
         .description {
             color: $text !important;
         }
+    }
+    .extra.content {
+        border-top: 1px solid rgba(255,255,255,.1) !important;
     }
 }
 

@@ -90,7 +90,7 @@ export const ProjectDetail: React.FC<{
             <ReactMarkdown
                 source={project.longDescription}
                 escapeHtml={false}
-                renderers={{ code: renderCode, image: renderImage, html: renderIframe }}
+                renderers={{ code: renderCode, html: renderIframe, image: renderImage }}
             />
         </Container>
     );
