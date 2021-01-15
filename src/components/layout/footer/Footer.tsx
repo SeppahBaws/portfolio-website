@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
                     </a>
                 </p>
                 <p>
-                    &copy; Seppe Dekeyser {moment().format("YYYY")}
+                    &copy;{moment().format("YYYY")} Seppe Dekeyser
                 </p>
             </Container>
         </Segment>
