@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import React from "react";
@@ -28,6 +28,14 @@ export const Footer: React.FC = () => {
                         rel="noopener noreferrer"
                     >
                         <FontAwesomeIcon icon={faLinkedin}/>
+                    </a>
+                    <a
+                        className="footer-link"
+                        href="https://twitter.com/SeppahBaws"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FontAwesomeIcon icon={faTwitter}/>
                     </a>
                 </p>
                 <p>
