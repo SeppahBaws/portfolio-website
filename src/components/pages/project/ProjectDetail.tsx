@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { CodeBlock, atomOneDark } from "react-code-blocks";
 import ReactMarkdown from "react-markdown";
-import { match } from "react-router-dom";
+import { Redirect, useRouteMatch } from "react-router-dom";
 import { Container, Header, Image, Label, Loader } from "semantic-ui-react";
 import { Project } from "../../../classes/Project";
 import "./ProjectDetail.scss";
 
-export const ProjectDetail: React.FC<{
-    match: match,
-}> = (props) => {
+export const ProjectDetail: React.FC = () => {
     const [project, setProject] = useState<Project>();
+
+    const match = useRouteMatch<{
+        projectId: string | undefined,
+    }>();
 
     useEffect(() => {
         document.title = "Seppe Dekeyser";
     }, []);
 
+    if (match.params.projectId === undefined) {
+        return (
+            <Redirect to="/" />
+        )
+    }
+
     useEffect(() => {
-        // @ts-ignore
-        const id = props.match.params.projectId;
+        const id = match.params.projectId;
         fetch(`https://api.seppedekeyser.be/project/${id}`)
-            .then(async(response) => response.json())
+            .then(async (response) => response.json())
             .then(data => {
                 setProject({
                     id: data.result.id,
@@ -30,7 +37,7 @@ export const ProjectDetail: React.FC<{
                     title: data.result.title,
                 });
             });
-    }, [props.match.params]);
+    }, [match.params]);
 
     useEffect(() => {
         if (project) {
@@ -39,7 +46,7 @@ export const ProjectDetail: React.FC<{
     }, [project]);
 
     if (!project) {
-        return <Loader active/>;
+        return <Loader active />;
     }
 
     const renderImage = (imgProps: any) => {
@@ -48,7 +55,7 @@ export const ProjectDetail: React.FC<{
 
     const renderCode = (codeProps: any) => {
         return (
-            <div style={{ fontFamily: "Jetbrains Mono" }}>
+            <div style={{ fontFamily: "Jetbrains Mono NL", fontSize: 13 }}>
                 <CodeBlock
                     language={codeProps.language}
                     text={codeProps.value}
@@ -87,11 +94,14 @@ export const ProjectDetail: React.FC<{
                     );
                 })}
             </div>
-            <ReactMarkdown
-                source={project.longDescription}
-                escapeHtml={false}
-                renderers={{ code: renderCode, html: renderIframe, image: renderImage }}
-            />
+            <Container text>
+                <ReactMarkdown
+                    source={project.longDescription}
+                    escapeHtml={false}
+                    renderers={{ code: renderCode, html: renderIframe, image: renderImage }}
+                    
+                />
+            </Container>
         </Container>
     );
 };

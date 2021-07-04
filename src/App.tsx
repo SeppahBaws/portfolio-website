@@ -11,7 +11,7 @@ import { ProjectDetail } from "./components/pages/project/ProjectDetail";
 
 export const App: React.FC = () => {
     return (
-        <Container className="app" fluid>
+        <div className="app">
             <BrowserRouter>
                 <NavBar/>
 
@@ -25,7 +25,7 @@ export const App: React.FC = () => {
 
                 <Footer/>
             </BrowserRouter>
-        </Container>
+        </div>
     );
 };
 

@@ -7,7 +7,7 @@ class NavLink {
     display!: string;
     name!: string;
     url!: string;
-    ext: boolean = false;
+    ext = false;
 }
 
 export const NavBar: React.FC = () => {
