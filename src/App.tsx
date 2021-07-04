@@ -2,7 +2,6 @@ import React from "react";
 import "./App.scss";
 import "./theme.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Container } from "semantic-ui-react";
 import { Footer } from "./components/layout/footer/Footer";
 import { NavBar } from "./components/layout/navbar/NavBar";
 import { AboutMe } from "./components/pages/aboutme/AboutMe";

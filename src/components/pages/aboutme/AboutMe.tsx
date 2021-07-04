@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Grid, Header, Image } from "semantic-ui-react";
+import { Container, Header, Image } from "semantic-ui-react";
 import "./AboutMe.scss";
 
 export const AboutMe: React.FC = () => {

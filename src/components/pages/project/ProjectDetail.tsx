@@ -49,10 +49,12 @@ export const ProjectDetail: React.FC = () => {
         return <Loader active />;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderImage = (imgProps: any) => {
         return <Image src={imgProps.src} />;
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderCode = (codeProps: any) => {
         return (
             <div style={{ fontFamily: "Jetbrains Mono NL", fontSize: 13 }}>
@@ -66,6 +68,7 @@ export const ProjectDetail: React.FC = () => {
         );
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderIframe = (iframe: any) => {
         return (
             <div className="iframe-wrapper" dangerouslySetInnerHTML={{ __html: iframe.value }}>
