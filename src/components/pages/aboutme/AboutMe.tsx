@@ -34,7 +34,7 @@ export const AboutMe: React.FC = () => {
             <Header as="h3">Skills</Header>
             <ul>
                 <li>Game dev: C++, C#, HLSL, GLSL, Unity, Unreal Engine</li>
-                <li>Graphics apis: DirectX11, OpenGL, currently playing around with Vulkan, DirectX 12 and DirectX Raytracing</li>
+                <li>Graphics APIs: DirectX11, OpenGL, currently playing around with Vulkan, DirectX 12 and DirectX Raytracing</li>
                 <li>Software: Visual Studio, Git, Perforce, Blender, Photoshop</li>
                 <li>Web: React, Svelte, TypeScript / JavaScript, HTML, CSS</li>
             </ul>
