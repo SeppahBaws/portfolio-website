@@ -74,7 +74,7 @@ export const AboutMe: React.FC = () => {
                     <div className="about-me-education-description">
                         <p>
                             <b>Bachelor Degree in Game Development in Digital Arts and Entertainment</b><br />
-                            <i>Howest University of Applied Sciences, Kortrijk (BE)</i>
+                            <i><a href="https://www.howest.be/en" target="_blank">Howest University of Applied Sciences</a>, Kortrijk (BE)</i>
                         </p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ export const AboutMe: React.FC = () => {
                     <div className="about-me-education-description">
                         <p>
                             <b>High School Degree in IT Management</b><br />
-                            <i>Miniemeninstituut, Leuven (BE)</i>
+                            <i><a href="https://miniemeninstituut.be/" target="_blank">Miniemeninstituut</a>, Leuven (BE)</i>
                         </p>
                     </div>
                 </div>
