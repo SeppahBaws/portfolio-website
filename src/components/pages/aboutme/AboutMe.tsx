@@ -33,7 +33,7 @@ export const AboutMe: React.FC = () => {
 
             <Header as="h3">Skills</Header>
             <ul>
-                <li>Game dev: C++, C#, HLSL, GLSL, Unity, Unreal Engine</li>
+                <li>Game dev: C++, C#, Rust, HLSL, GLSL, Unity, Unreal Engine</li>
                 <li>Graphics APIs: DirectX11, OpenGL, currently playing around with Vulkan, DirectX 12 and DirectX Raytracing</li>
                 <li>Software: Visual Studio, Git, Perforce, Blender, Photoshop</li>
                 <li>Web: React, Svelte, TypeScript / JavaScript, HTML, CSS</li>
@@ -46,7 +46,7 @@ export const AboutMe: React.FC = () => {
                 <li>
                     Feb 2021 - Jun 2021 // <b>R&amp;D Rendering Engineer intern</b> @ <i><a href="http://digitalartsandentertainment.be/page/133/Research" target="_blank">DAE Research</a> (BE)</i>
                     <ul>
-                        <li>Learning DirectX 12 and the DirectX Raytracing API.</li>
+                        <li>Researching DirectX 12 and the DirectX Raytracing API.</li>
                         <li>Researching and implementing adaptive sampling in the <a href="https://github.com/microsoft/DirectX-Graphics-Samples" target="_blank">MiniEngine</a>.</li>
                         <li>Profiling C++ and HLSL code both on the CPU and the GPU.</li>
                         <li>Documenting implementation and results.</li>
@@ -58,7 +58,7 @@ export const AboutMe: React.FC = () => {
                     <ul>
                         <li>Designing and creating modules for the frontend website for a new web platform.</li>
                         <li>Making these components work with the backend via GraphQL queries.</li>
-                        <li>Communicating with and guiding the team with planning modules and features for the website.</li>
+                        <li>Leading and coaching the team with planning modules and features for the website.</li>
                     </ul>
                 </li>
             </ul>
