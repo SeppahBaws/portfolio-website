@@ -34,15 +34,24 @@ export const AboutMe: React.FC = () => {
             <Header as="h3">Skills</Header>
             <ul>
                 <li>Game dev: C++, C#, Rust, HLSL, GLSL, Unity, Unreal Engine</li>
-                <li>Graphics APIs: DirectX11, OpenGL, currently playing around with Vulkan, DirectX 12 and DirectX Raytracing</li>
+                <li>Graphics APIs: experience with Vulkan, DirectX 12, DirectX Raytracing, DirectX 11, OpenGL</li>
                 <li>Software: Visual Studio, Git, Perforce, Blender, Photoshop</li>
-                <li>Web: React, Svelte, TypeScript / JavaScript, HTML, CSS</li>
+                <li>Web: React, Svelte, TypeScript / JavaScript, GraphQL, HTML, CSS</li>
             </ul>
 
             <br />
 
             <Header as="h3">Carreer</Header>
             <ul>
+                <li>
+                    Jul 2021 - Now // <b>Lead Frontend Developer</b> @ <i><a href="https://edu-tech.be" target="_blank">Edu-Tech</a> (BE)</i>
+                    <ul>
+                        <li>Designing and creating modules for the frontend website of a brand-new online platform.</li>
+                        <li>Creating new reusable components for usage throughout the site.</li>
+                        <li>Planning features and reviewing code from teammembers.</li>
+                    </ul>
+                </li>
+                <br />
                 <li>
                     Feb 2021 - Jun 2021 // <b>R&amp;D Rendering Engineer intern</b> @ <i><a href="http://digitalartsandentertainment.be/page/133/Research" target="_blank">DAE Research</a> (BE)</i>
                     <ul>
@@ -56,8 +65,8 @@ export const AboutMe: React.FC = () => {
                 <li>
                     Dec 2017 - Jul 2020 // <b>Lead Frontend Developer</b> @ <i><a href="https://edu-tech.be" target="_blank">Edu-Tech</a> (BE)</i>
                     <ul>
-                        <li>Designing and creating modules for the frontend website for a new web platform.</li>
-                        <li>Making these components work with the backend via GraphQL queries.</li>
+                        <li>Designing and creating modules for the frontend website.</li>
+                        <li>Writing GraphQL queries for communicating with the backend API.</li>
                         <li>Leading and coaching the team with planning modules and features for the website.</li>
                     </ul>
                 </li>
