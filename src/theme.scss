@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
 $background-dark: #181a1b;
 $background: lighten($background-dark, 5%);
 $background-lighter: lighten($background-dark, 5%);
@@ -14,9 +16,42 @@ html, body {
     font-size: 16px !important;
 }
 
+b {
+    font-weight: 500 !important;
+}
+
+.ui.text {
+    font-family: 'Fira Sans' !important;
+    font-weight: 300 !important;
+}
+
 h1, h2, h3, h4, h5, h6,
 .ui.header {
     color: $text-light !important;
+    font-family: 'Fira Sans' !important;
+    font-weight: 600 !important;
+}
+
+// ======[ Bullet list ]====== //
+.ui.list, .ui.list .item {
+    font-family: 'Fira Sans' !important;
+    font-weight: 300 !important;
+}
+
+// ======[ Menu ]====== //
+.ui.menu .item {
+    font-family: 'Fira Sans' !important;
+    font-weight: 400 !important;
+
+    &.header {
+        font-weight: 500 !important;
+    }
+}
+
+// ======[ Footer ]====== //
+.ui.footer {
+    font-family: 'Fira Sans' !important;
+    font-weight: 300 !important;
 }
 
 // ======[ Selected text ]====== //
