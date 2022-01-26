@@ -28,6 +28,12 @@ export const NavBar: React.FC = () => {
             url: "/about-me",
         },
         {
+            display: "Blog",
+            ext: true,
+            name: "blog",
+            url: "https://blog.seppedekeyser.be",
+        },
+        {
             display: "Resume",
             ext: true,
             name: "resume",
