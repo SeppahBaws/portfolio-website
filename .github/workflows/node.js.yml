@@ -28,7 +28,8 @@ jobs:
         path: |
           build
           !build/**/*.md
-    - name: Deploy via FTP
+    - if: ${{ github.event_name == 'push' }}
+      name: Deploy via FTP
       uses: airvzxf/ftp-deployment-action@latest
       with:
         server: ${{ secrets.FTP_URL }}
