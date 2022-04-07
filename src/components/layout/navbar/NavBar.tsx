@@ -31,7 +31,7 @@ export const NavBar: React.FC = () => {
             display: "Blog",
             ext: true,
             name: "blog",
-            url: "https://blog.seppedekeyser.be",
+            url: "https://renderingpixels.com",
         },
         {
             display: "Resume",
