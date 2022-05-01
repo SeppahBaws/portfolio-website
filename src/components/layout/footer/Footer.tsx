@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faMastodon, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import React from "react";
@@ -36,6 +36,14 @@ export const Footer: React.FC = () => {
                         rel="noopener noreferrer"
                     >
                         <FontAwesomeIcon icon={faTwitter}/>
+                    </a>
+                    <a
+                        className="footer-link"
+                        href="https://mastodon.gamedev.place/web/@SeppahBaws"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FontAwesomeIcon icon={faMastodon}/>
                     </a>
                 </p>
                 <p>
