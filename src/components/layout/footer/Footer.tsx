@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
                         className="footer-link"
                         href="https://mastodon.gamedev.place/web/@SeppahBaws"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer me"
                     >
                         <FontAwesomeIcon icon={faMastodon}/>
                     </a>
